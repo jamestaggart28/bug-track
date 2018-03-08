@@ -27,3 +27,30 @@ class ProjectDetail(DetailView):
 
 class ProjectList(ListView):
     model = Project
+
+
+class BugCreate(CreateView):
+    model = Bug
+    fields = [
+        'project', 'name', 'reproduce', 'expected',
+        'observed', 'assigned', 'fixed']
+
+
+class BugUpdate(UpdateView):
+    model = Bug
+    fields = [
+        'project', 'name', 'reproduce', 'expected',
+        'observed', 'assigned', 'fixed']
+
+
+class BugDelete(DeleteView):
+    model = Bug
+    success_url = reverse_lazy('projects:project-list')
+
+
+class BugDetail(DetailView):
+    model = Bug
+
+
+class BugList(ListView):
+    model = Bug
