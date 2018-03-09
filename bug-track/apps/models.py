@@ -3,7 +3,7 @@ from projects.models import Project
 
 
 # Create your models here.
-class Application(models.Model):
+class App(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField()
     projects = models.ManyToManyField(Project)
@@ -13,7 +13,7 @@ class Application(models.Model):
 
 
 class Bug(models.Model):
-    application = models.ForeignKey(Application, on_delete=models.CASCADE)
+    app = models.ForeignKey(App, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     reproduce = models.TextField()
     expected = models.TextField()
