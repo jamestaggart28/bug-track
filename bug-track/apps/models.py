@@ -19,7 +19,7 @@ class Bug(models.Model):
     expected = models.TextField()
     observed = models.TextField()
     assigned = models.CharField(max_length=30)
-    fiexed = models.BooleanField()
+    fixed = models.BooleanField()
 
     def __str__(self):
         return self.name
