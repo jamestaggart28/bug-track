@@ -3,5 +3,28 @@
 {% block title %}project | list{% endblock title %}
 
 {% block content %}
-    {{ object_list }}
+    <div class="row mt-4">
+        <div class="col">
+            <h1>Project List</h1>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for object in object_list %}
+                    <tr>
+                        <td><a href="{% url 'projects:project-detail' object.id %}">{{ object }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock content %}

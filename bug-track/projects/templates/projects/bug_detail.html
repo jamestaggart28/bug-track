@@ -1,7 +1,63 @@
 {% extends 'base.html' %}
 
-{% block title %}project | bug | detail{% endblock title %}
+{% block title %}project | bug | details{% endblock title %}
 
 {% block content %}
-    {{ object }}
+    <div class="row mt-4">
+        <div class="col">
+            <h1>Project Bug Details</h1>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col">
+            <label>Project</label>
+            <p>{{ object.project }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Name</label>
+            <p>{{ object.name }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Reproduce</label>
+            <p>{{ object.reproduce }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Expected</label>
+            <p>{{ object.expected }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Observed</label>
+            <p>{{ object.observed }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Assigned</label>
+            <p>{{ object.assigned }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Fixed</label>
+            <p>{{ object.fixed }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="btn-group float-right" role="group">
+                <a href="{% url 'projects:bug-delete' object.id %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'projects:bug-update' object.id %}" class="btn btn-primary">Update</a>
+            </div>
+        </div>
+    </div>
+    
 {% endblock content %}

@@ -3,5 +3,46 @@
 {% block title %}project | bug | delete{% endblock title %}
 
 {% block content %}
-    {{ object }}
+    <form method="post">
+        {% csrf_token %}
+        <div class="row mt-4">
+            <div class="col">
+                <h1>Project Bug Delete</h1>
+            </div>
+        </div>
+        <hr/>
+        <div class="row mt-4">
+            <div class="col">
+                <p class="lead">Are you sure you want to delete the project below?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Project</td>
+                            <td>Name</td>
+                            <td>Assigned</td>
+                            <td>Fixed</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ object.project }}</td>
+                            <td>{{ object.name }}</td>
+                            <td>{{ object.assigned }}</td>
+                            <td>{{ object.fixed }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="btn btn-danger float-right" type="submit" value="Delete" />
+            </div>
+        </div>
+    </form>
+    
 {% endblock content %}
