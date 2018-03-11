@@ -29,14 +29,16 @@ class AppDetail(DetailView):
 
 class BugCreate(CreateView):
     model = Bug
-    fields = ['app', 'name', 'reproduce',
-              'expected', 'observed' 'assigned', 'fixed']
+    fields = [
+        'app', 'name', 'reproduce', 'expected',
+        'observed', 'assigned', 'fixed']
 
 
 class BugUpdate(UpdateView):
     model = Bug
-    fields = ['app', 'name', 'reproduce',
-              'expected', 'observed' 'assigned', 'fixed']
+    fields = [
+        'app', 'name', 'reproduce', 'expected',
+        'observed', 'assigned', 'fixed']
 
 
 class BugDelete(DeleteView):
