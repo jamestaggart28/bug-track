@@ -1,7 +1,7 @@
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from .models import App
+from .models import App, Bug
 
 
 # Create your views here.
@@ -25,3 +25,29 @@ class AppList(ListView):
 
 class AppDetail(DetailView):
     model = App
+
+
+class BugCreate(CreateView):
+    model = Bug
+    fields = [
+        'app', 'name', 'reproduce', 'expected',
+        'observed', 'assigned', 'fixed']
+
+
+class BugUpdate(UpdateView):
+    model = Bug
+    fields = [
+        'app', 'name', 'reproduce', 'expected',
+        'observed', 'assigned', 'fixed']
+
+
+class BugDelete(DeleteView):
+    model = Bug
+
+
+class BugDetail(DetailView):
+    model = Bug
+
+
+class BugList(ListView):
+    model = Bug
