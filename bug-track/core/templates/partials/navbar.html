@@ -9,6 +9,26 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'core:home' %}">home</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Projects
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'projects:project-create' %}">Create</a>
+                    <a class="dropdown-item" href="{% url 'projects:project-list' %}">List</a>
+                    <a class="dropdown-item" href="{% url 'projects:bug-create' %}">Bug</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Apps
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'apps:app-create' %}">Create</a>
+                    <a class="dropdown-item" href="{% url 'apps:app-list' %}">List</a>
+                    <a class="dropdown-item" href="{% url 'apps:bug-create' %}">Bug</a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
