@@ -1,7 +1,29 @@
 {% extends 'base.html' %}
 
-{% block title %}project | detail{% endblock title %}
+{% block title %}project | details{% endblock title %}
 
 {% block content %}
-    {{ object }}
+    <div class="row mt-4">
+        <div class="col">
+            <h1>Project Details</h1>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col">
+            <label>Name</label>
+            <p>{{ object.name }}</p>
+            <label>Description</label>
+            <p>{{ object.description }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="btn-group float-right" role="group">
+                <a href="{% url 'projects:project-delete' object.id %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'projects:project-update' object.id %}" class="btn btn-primary">Update</a>
+                <a href="{% url 'projects:bug-create' %}" class="btn btn-success">Bug</a>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
