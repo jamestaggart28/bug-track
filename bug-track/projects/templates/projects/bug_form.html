@@ -2,6 +2,48 @@
 
 {% block title %}project | bug | form{% endblock title %}
 
+{% load widget_tweaks %}
+
 {% block content %}
-    {{ form.as_table }}
+    <form method="post">
+        {% csrf_token %}
+        <div class="row mt-4">
+            <div class="col">
+                <h1>Project Bug Form</h1>
+            </div>
+        </div>
+        <hr/>
+        <div class="form-group">
+            <label for="id_project">{{ form.project.label }}</label>
+            {{ form.project | add_class:"form-control"}}
+        </div>
+        <div class="form-group">
+            <label for="id_name">{{ form.name.label }}</label>
+            {{ form.name | add_class:"form-control" }} 
+        <div class="form-group">
+            <label for="id_reproduce">{{ form.reproduce.label }}</label>
+            {{ form.reproduce | add_class:"form-control" }}
+        </div>
+        <div class="form-group">
+            <label for="id_expected">{{ form.expected.label }}</label>
+            {{ form.expected | add_class:"form-control" }}
+        </div>
+        <div class="form-group">
+            <label for="id_observed">{{ form.observed.label }}</label>
+            {{ form.observed | add_class:"form-control" }}
+        </div>
+        <div class="form-group">
+            <label for="id_assigned">{{ form.assigned.label }}</label>
+            {{ form.assigned | add_class:"form-control" }}
+        </div>
+        <div class="form-group">
+            <label for="id_fixed">{{ form.fixed.label }}</label>
+            {{ form.fixed | add_class:"form-control" }}
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="btn btn-success float-right" type="submit" value="Create" />
+            </div>
+        </div>
+    </form>
 {% endblock content %}
