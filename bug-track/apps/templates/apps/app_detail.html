@@ -3,5 +3,43 @@
 {% block title %}app | detail{% endblock title %}
 
 {% block content %}
-    {{ object }}
+    <div class="row mt-4">
+        <div class="col">
+            <h1>App Details</h1>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col">
+            <label>Name</label>
+            <p>{{ object.name }}</p>
+            <label>Description</label>
+            <p>{{ object.description }}</p>
+        </div>
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Projects</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for project in object.projects.all %}
+                        <tr>
+                            <td><a href="{% url 'projects:project-detail' project.id %}">{{ project }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="btn-group float-right" role="group">
+                <a href="{% url 'apps:app-delete' object.id %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'apps:app-update' object.id %}" class="btn btn-primary">Update</a>
+                <a href="{% url 'apps:bug-create' %}" class="btn btn-success">Bug</a>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
