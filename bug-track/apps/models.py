@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from projects.models import Project
 
 
@@ -10,6 +11,10 @@ class App(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse(
+            'apps:app-detail', args=[str(self.id)])
 
 
 class Bug(models.Model):
@@ -23,3 +28,7 @@ class Bug(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse(
+            'apps:bug-detail', args=[str(self.id)])
