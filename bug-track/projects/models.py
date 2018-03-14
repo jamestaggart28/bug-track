@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 # Create your models here.
@@ -8,6 +9,10 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse(
+            'projects:project-detail', args=[str(self.id)])
 
 
 class Bug(models.Model):
@@ -21,3 +26,7 @@ class Bug(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse(
+            'projects:bug-detail', args=[str(self.id)])

@@ -1,3 +1,4 @@
+from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -17,6 +18,7 @@ class AppUpdate(UpdateView):
 
 class AppDelete(DeleteView):
     model = App
+    success_url = reverse_lazy('apps:app-list')
 
 
 class AppList(ListView):
@@ -43,6 +45,7 @@ class BugUpdate(UpdateView):
 
 class BugDelete(DeleteView):
     model = Bug
+    success_url = reverse_lazy('apps:bug-list')
 
 
 class BugDetail(DetailView):
