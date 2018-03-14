@@ -18,7 +18,7 @@ class ProjectUpdate(UpdateView):
 
 class ProjectDelete(DeleteView):
     model = Project
-    success_url = reverse_lazy('project:project-list')
+    success_url = reverse_lazy('projects:project-list')
 
 
 class ProjectDetail(DetailView):
@@ -45,7 +45,7 @@ class BugUpdate(UpdateView):
 
 class BugDelete(DeleteView):
     model = Bug
-    success_url = reverse_lazy('projects:project-list')
+    success_url = reverse_lazy('projects:bug-list')
 
 
 class BugDetail(DetailView):
