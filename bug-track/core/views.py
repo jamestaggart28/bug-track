@@ -21,3 +21,7 @@ class Register(FormView):
         user = authenticate(username=username, password=raw_password)
         login(self.request, user)
         return redirect('core:home')
+
+
+class Profile(TemplateView):
+    template_name = "core/profile.html"
