@@ -37,11 +37,8 @@
                     Account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'login' %}">login</a>
-                    <a class="dropdown-item" href="{% url 'logout' %}">logout</a>
-                    <a class="dropdown-item" href="{% url 'password_change' %}">password change</a>
-                    <a class="dropdown-item" href="{% url 'core:register' %}">register</a>
-                    <a class="dropdown-item" href="{% url 'core:profile' %}">profile</a>
+                    <a class="dropdown-item" href="{% url 'accounts:login' %}">login</a>
+                    <a class="dropdown-item" href="{% url 'accounts:logout' %}">logout</a>
                 </div>
             </li>
         </ul>
