@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core',
     'projects',
     'apps',
+    'accounts',
     'widget_tweaks',
 ]
 
