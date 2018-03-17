@@ -124,5 +124,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# login redirect
-LOGIN_REDIRECT_URL = 'core:home'
+LOGIN_URL = "/accounts/login/"
