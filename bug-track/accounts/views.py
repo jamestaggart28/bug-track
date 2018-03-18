@@ -45,6 +45,10 @@ def logout_view(request):
     return redirect('core:home')
 
 
+def authenticated_view(request):
+    return render(request, "accounts/authenticated.html", {})
+
+
 class Register(FormView):
     form_class = UserCreationForm
     template_name = 'accounts/register.html'
