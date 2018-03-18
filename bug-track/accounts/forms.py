@@ -8,6 +8,15 @@ class UserLoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
 
+    def __init__(self, request, *args, **kwargs):
+        return super(UserLoginForm, self).__init__(*args, **kwargs)
+
+    def get_user(self, *args, **kwargs):
+        username = self.cleaned_data.get("username")
+        password = self.cleaned_data.get("password")
+        user = authenticate(username=username, password=password)
+        return user
+
     def clean(self, *args, **kwargs):
         username = self.cleaned_data.get("username")
         password = self.cleaned_data.get("password")
