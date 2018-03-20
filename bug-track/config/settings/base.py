@@ -122,8 +122,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+# auth accounts app
 STATIC_URL = '/static/'
-
 LOGIN_URL = "/accounts/login/"
-
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# emails
+# sendgrid settings
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'yourusername@youremail.com'
+EMAIL_HOST_PASSWORD = 'your password'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+DEFAULT_FROM_EMAIL = 'Your Name <you@email.com>'
+ADMINS = (
+    ('You', 'you@email.com'),
+)
+
+MANAGERS = ADMINS
