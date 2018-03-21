@@ -10,6 +10,10 @@ class ProjectCreate(CreateView):
     model = Project
     fields = ['name', 'description']
 
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
 
 class ProjectUpdate(UpdateView):
     model = Project
@@ -34,6 +38,10 @@ class BugCreate(CreateView):
     fields = [
         'project', 'name', 'reproduce', 'expected',
         'observed', 'assigned', 'fixed']
+
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
 
 
 class BugUpdate(UpdateView):
