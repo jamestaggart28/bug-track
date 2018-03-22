@@ -29,12 +29,13 @@ class Bug(models.Model):
     assigned = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="assigned"
+        related_name="project_bug_assigned"
     )
     fixed = models.BooleanField()
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
+        related_name="project_bug_created_by"
     )
 
     def __str__(self):
