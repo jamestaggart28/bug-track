@@ -3,10 +3,12 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from .models import App, Bug
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 
 # Create your views here.
-class AppCreate(CreateView):
+class AppCreate(LoginRequiredMixin, CreateView):
     model = App
     fields = ['name', 'description', 'projects']
 
@@ -15,14 +17,22 @@ class AppCreate(CreateView):
         return super().form_valid(form)
 
 
-class AppUpdate(UpdateView):
+class AppUpdate(UserPassesTestMixin, UpdateView):
     model = App
     fields = ['name', 'description', 'projects']
 
+    def test_func(self):
+        app = self.get_object()
+        return app.created_by == self.request.user
 
-class AppDelete(DeleteView):
+
+class AppDelete(UserPassesTestMixin, DeleteView):
     model = App
     success_url = reverse_lazy('apps:app-list')
+
+    def test_func(self):
+        app = self.get_object()
+        return app.created_by == self.request.user
 
 
 class AppList(ListView):
@@ -33,7 +43,7 @@ class AppDetail(DetailView):
     model = App
 
 
-class BugCreate(CreateView):
+class BugCreate(LoginRequiredMixin, CreateView):
     model = Bug
     fields = [
         'app', 'name', 'reproduce', 'expected',
@@ -44,16 +54,24 @@ class BugCreate(CreateView):
         return super().form_valid(form)
 
 
-class BugUpdate(UpdateView):
+class BugUpdate(UserPassesTestMixin, UpdateView):
     model = Bug
     fields = [
         'app', 'name', 'reproduce', 'expected',
         'observed', 'assigned', 'fixed']
 
+    def test_func(self):
+        app = self.get_object()
+        return app.created_by == self.request.user or app.assigned == self.request.user
 
-class BugDelete(DeleteView):
+
+class BugDelete(UserPassesTestMixin, DeleteView):
     model = Bug
     success_url = reverse_lazy('apps:bug-list')
+
+    def test_func(self):
+        app = self.get_object()
+        return app.created_by == self.request.user
 
 
 class BugDetail(DetailView):
