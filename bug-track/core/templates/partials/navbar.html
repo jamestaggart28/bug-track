@@ -26,8 +26,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{% url 'apps:app-create' %}">Create</a>
-                    <a class="dropdown-item" href="{% url 'apps:app-list' %}">List</a>
                     <a class="dropdown-item" href="{% url 'apps:bug-create' %}">Bug Create</a>
+                    <a class="dropdown-item" href="{% url 'apps:app-list' %}">List</a>
                     <a class="dropdown-item" href="{% url 'apps:bug-list' %}">Bug List</a>
                 </div>
             </li>
@@ -37,12 +37,12 @@
                     Account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'accounts:login' %}">login</a>
+                    <a class="dropdown-item" href="{% url 'accounts:profile' %}">profile</a>
+                    <a class="dropdown-item" href="{% url 'accounts:password-change' %}">change pass</a>
                     <a class="dropdown-item" href="{% url 'accounts:logout' %}">logout</a>
                     <a class="dropdown-item" href="{% url 'accounts:register' %}">register</a>
-                    <a class="dropdown-item" href="{% url 'accounts:authenticated' %}">authenticated</a>
-                    <a class="dropdown-item" href="{% url 'accounts:password-change' %}">change pass</a>
-                    <a class="dropdown-item" href="{% url 'accounts:password-reset' %}">change reset</a>
+                    <a class="dropdown-item" href="{% url 'accounts:login' %}">login</a>
+                    <a class="dropdown-item" href="{% url 'accounts:password-reset' %}">pass reset</a>
                 </div>
             </li>
         </ul>
