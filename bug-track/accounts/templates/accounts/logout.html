@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}logged out{% endblock title %}
+{% block title %}account | logout{% endblock title %}
 
 {% block content %}
-    <p>{{ title }}</p>
+    <div class="row mt-4">
+        <div class="col">
+            <h1>Logout</h1>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col">
+            <p>You have been logged out from your session</p>
+        </div>
+    </div>
 {% endblock content %}
