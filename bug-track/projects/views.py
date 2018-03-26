@@ -41,6 +41,7 @@ class ProjectDetail(DetailView):
 
 class ProjectList(ListView):
     model = Project
+    paginate_by = 10
 
 
 class BugCreate(LoginRequiredMixin, CreateView):
@@ -80,3 +81,4 @@ class BugDetail(DetailView):
 
 class BugList(ListView):
     model = Bug
+    paginate_by = 10
