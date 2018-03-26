@@ -4,11 +4,37 @@
 {% block before_content %}
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-3">bug track</h1>
-            <p class="lead">Welcome to bug track, a web project designed to track bugs on projects and applications.</p>
+            <h1 class="display-2">bug track</h1>
+            <h1 class="lead">Web project designed to track bugs on projects and applications.</h1>
         </div>
     </div>
 {% endblock before_content %}
 
 {% block content %}
+<div class="row">
+    <div class="col">
+        <h2>Introduction</h2>
+        <hr/>
+        <p class="">Bug track is an error tracking system made for developers to record all known bugs in their code. Inspired by The Joel Test, bug track was meant to add a more specialized approached to the traditional ‘bug database’. What makes bug track special for developers is that it takes into consideration modularity. To understand that you must understand the difference between projects and apps.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2>Projects</h3>
+        <hr/>
+        <p class="">Projects are web-based systems that consist of multiple applications. Projects refer to the entire application and all of its parts.</p>
+    </div>
+    <div class="col">
+        <h2>Apps</h3>
+        <hr/>
+        <p class="">Apps refer to all the reusable components that make up a project. Apps should be self-contained components you could pick up and place into another project without much, or any, modification.</p>
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col">
+        <h2>What is the Point</h2>
+        <hr/>
+        <p class="">The purpose and what distinguishes bug track from your traditional bug database is that it tracks the relation between projects and their applications so if later a reusable application gets a bug you can track all the affected projects. The benefits of tracking this simple relation can be tremendous. If you have an application that spans across many projects and that application has a bug you are no longer left in the dark on which projects were affected. Giving you full accountability.</p>
+    </div>
+</div>
 {% endblock content %}

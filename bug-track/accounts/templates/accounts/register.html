@@ -9,7 +9,7 @@
     {% csrf_token %}
     <div class="row mt-4">
         <div class="col">
-            <h1>Registration</h1>
+            <h1>Register</h1>
         </div>
     </div>
     <hr/>
@@ -28,6 +28,11 @@
     <div class="form-group">
         <label>{{ form.password.label}}</label>
         {{ form.password | add_class:"form-control" }}
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Already have an account? <a href="{% url 'accounts:login' %}">Click here to login.</a></p>
+        </div>
     </div>
     <div class="row">
         <div class="col">
