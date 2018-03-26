@@ -14,13 +14,9 @@
                     Projects
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    {% if user.is_authenticated %}
                     <a class="dropdown-item" href="{% url 'projects:project-create' %}">Create</a>
-                    {% endif %}
                     <a class="dropdown-item" href="{% url 'projects:project-list' %}">List</a>
-                    {% if user.is_authenticated %}
                     <a class="dropdown-item" href="{% url 'projects:bug-create' %}">Bug Create</a>
-                    {% endif %}
                     <a class="dropdown-item" href="{% url 'projects:bug-list' %}">Bug List</a>
                 </div>
             </li>
@@ -29,13 +25,9 @@
                     Apps
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    {% if user.is_authenticated %}
                     <a class="dropdown-item" href="{% url 'apps:app-create' %}">Create</a>
-                    {% endif %}
                     <a class="dropdown-item" href="{% url 'apps:app-list' %}">List</a>
-                    {% if user.is_authenticated %}
                     <a class="dropdown-item" href="{% url 'apps:bug-create' %}">Bug Create</a>
-                    {% endif %}
                     <a class="dropdown-item" href="{% url 'apps:bug-list' %}">Bug List</a>
                 </div>
             </li>
