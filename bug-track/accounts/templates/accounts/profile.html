@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
-{% block title %} profile{% endblock title %}
+{% block title %}account | profile{% endblock title %}
 {% block content %}
-<p>{{ user.username }}</p>
-<P>{{ user.is_authenticated }}</P>
+<div class="row mt-4">
+    <div class="col">
+        <h1>Profile</h1>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col">
+        <label>Username</label>
+        <p>{{ user.username }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label>Email</label>
+        <p>{{ user.email }}</p>
+    </div>
+</div>
 {% endblock content %}

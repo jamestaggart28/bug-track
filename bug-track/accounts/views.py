@@ -3,6 +3,7 @@ from django.contrib.auth import login
 from .forms import UserRegisterForm
 from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -16,7 +17,7 @@ class Register(FormView):
         return redirect('accounts:profile')
 
 
-class Profile(TemplateView):
+class Profile(LoginRequiredMixin, TemplateView):
     template_name = "accounts/profile.html"
 
 
