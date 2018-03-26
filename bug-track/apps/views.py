@@ -37,6 +37,7 @@ class AppDelete(UserPassesTestMixin, DeleteView):
 
 class AppList(ListView):
     model = App
+    paginate_by = 10
 
 
 class AppDetail(DetailView):
@@ -80,3 +81,4 @@ class BugDetail(DetailView):
 
 class BugList(ListView):
     model = Bug
+    paginate_by = 10
