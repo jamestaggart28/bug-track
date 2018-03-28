@@ -13,6 +13,8 @@ class Register(FormView):
 
     def form_valid(self, form):
         user = form.save()
+        user.set_password(user.password)
+        user.save()
         login(self.request, user)
         return redirect('accounts:profile')
 

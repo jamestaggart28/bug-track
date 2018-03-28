@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['bug-trax.herokuapp.com']
+ALLOWED_HOSTS = ['bug-tracks.herokuapp.com']
 
 
 # Application definition
@@ -134,17 +134,15 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Email stuff.
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'btrack.testing@gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'jamestaggart28'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-DEFAULT_FROM_EMAIL = 'bug track <btrack.testing@gmail.com>'
 ADMINS = (
-    ('bug track', 'btrack.testing@gmail.com'),
+    ('james', 'btrack.testing@gmail.com'),
 )
-
 MANAGERS = ADMINS
 
 # Production stuff.
